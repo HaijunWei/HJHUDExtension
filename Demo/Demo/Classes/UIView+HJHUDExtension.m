@@ -1,9 +1,7 @@
 //
 //  UIView+HJHUDExtension.m
-//  Demo
 //
 //  Created by Haijun on 2019/5/16.
-//  Copyright © 2019 Haijun. All rights reserved.
 //
 
 #import "UIView+HJHUDExtension.h"
@@ -34,6 +32,9 @@ static HJConfigHUDBlock _configHUDBlock = nil;
     if (!hud) {
         hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         self.loadingHUD = hud;
+        self.loadingHUDCounter++;
+    } else if (hud.mode == MBProgressHUDModeIndeterminate) {
+        self.loadingHUDCounter++;
     }
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.detailsLabel.text = text;
@@ -49,16 +50,21 @@ static HJConfigHUDBlock _configHUDBlock = nil;
     if (!hud) {
         hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         self.loadingHUD = hud;
+        self.loadingHUDCounter++;
     }
-    hud.mode = MBProgressHUDModeDeterminate;
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
     hud.detailsLabel.text = text;
     hud.progress = progress;
     if (_configHUDBlock) { _configHUDBlock(hud); }
 }
 
 - (void)hideHUD {
-    [self.loadingHUD hideAnimated:YES];
-    self.loadingHUD = nil;
+    self.loadingHUDCounter--;
+    if (self.loadingHUDCounter <= 0) {
+        self.loadingHUDCounter = 0;
+        [self.loadingHUD hideAnimated:YES];
+        self.loadingHUD = nil;
+    }
 }
 
 - (void)showHUDText:(NSString *)text {
@@ -76,6 +82,7 @@ static HJConfigHUDBlock _configHUDBlock = nil;
 #pragma mark - Getter & Setter
 
 static char kLoadingHUD;
+static char kLoadingHUDCounter;
 
 - (void)setLoadingHUD:(MBProgressHUD *)loadingHUD {
     objc_setAssociatedObject(self, &kLoadingHUD, loadingHUD, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -83,6 +90,15 @@ static char kLoadingHUD;
 
 - (MBProgressHUD *)loadingHUD {
     return objc_getAssociatedObject(self, &kLoadingHUD);
+}
+
+- (void)setLoadingHUDCounter:(NSInteger)loadingHUDCounter {
+    objc_setAssociatedObject(self, &kLoadingHUDCounter, @(loadingHUDCounter), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSInteger)loadingHUDCounter {
+    NSNumber *counter = objc_getAssociatedObject(self, &kLoadingHUDCounter);
+    return counter ? counter.integerValue : 0;
 }
 
 @end
