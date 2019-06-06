@@ -13,7 +13,7 @@
 		84E5807B228D46AB0044B9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E5807A228D46AB0044B9BC /* Assets.xcassets */; };
 		84E5807E228D46AB0044B9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E5807C228D46AB0044B9BC /* LaunchScreen.storyboard */; };
 		84E58081228D46AB0044B9BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E58080228D46AB0044B9BC /* main.m */; };
-		84E5808A228D47090044B9BC /* UIView+HJHUDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E58089228D47090044B9BC /* UIView+HJHUDExtension.m */; };
+		84FBB8A822A8F92E000C56D3 /* UIView+HJHUDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB8A622A8F92E000C56D3 /* UIView+HJHUDExtension.m */; };
 		EEB04B730E206EAD1C211466 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0B33319881E7604EAE650 /* libPods-Demo.a */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +30,8 @@
 		84E5807D228D46AB0044B9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E5807F228D46AB0044B9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E58080228D46AB0044B9BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84E58088228D47090044B9BC /* UIView+HJHUDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HJHUDExtension.h"; sourceTree = "<group>"; };
-		84E58089228D47090044B9BC /* UIView+HJHUDExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HJHUDExtension.m"; sourceTree = "<group>"; };
+		84FBB8A622A8F92E000C56D3 /* UIView+HJHUDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HJHUDExtension.m"; sourceTree = "<group>"; };
+		84FBB8A722A8F92E000C56D3 /* UIView+HJHUDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HJHUDExtension.h"; sourceTree = "<group>"; };
 		C018CC2C78DD146820A29F3A /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 		84E58070228D46A90044B9BC /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				84E58087228D46B20044B9BC /* Classes */,
+				84FBB8A522A8F92E000C56D3 /* Classes */,
 				84E58071228D46A90044B9BC /* AppDelegate.h */,
 				84E58072228D46A90044B9BC /* AppDelegate.m */,
 				84E58074228D46A90044B9BC /* ViewController.h */,
@@ -99,13 +99,14 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
-		84E58087228D46B20044B9BC /* Classes */ = {
+		84FBB8A522A8F92E000C56D3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				84E58088228D47090044B9BC /* UIView+HJHUDExtension.h */,
-				84E58089228D47090044B9BC /* UIView+HJHUDExtension.m */,
+				84FBB8A722A8F92E000C56D3 /* UIView+HJHUDExtension.h */,
+				84FBB8A622A8F92E000C56D3 /* UIView+HJHUDExtension.m */,
 			);
-			path = Classes;
+			name = Classes;
+			path = ../../Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +207,7 @@
 			files = (
 				84E58076228D46A90044B9BC /* ViewController.m in Sources */,
 				84E58081228D46AB0044B9BC /* main.m in Sources */,
-				84E5808A228D47090044B9BC /* UIView+HJHUDExtension.m in Sources */,
+				84FBB8A822A8F92E000C56D3 /* UIView+HJHUDExtension.m in Sources */,
 				84E58073228D46A90044B9BC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
