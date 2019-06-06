@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/HaijunWei/HJHUDExtension.git", :tag => s.version.to_s }
   s.requires_arc = true
   
-  s.source_files  = "Classes/**/*.{h,m}"
+  s.source_files  = "Classes/*.{h,m}"
   s.dependency "MBProgressHUD"
 end
