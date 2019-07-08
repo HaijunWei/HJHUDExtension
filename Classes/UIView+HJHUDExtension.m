@@ -73,6 +73,7 @@ static HJConfigHUDBlock _configHUDBlock = nil;
 
 - (void)showHUDText:(NSString *)text second:(NSInteger)second {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+    hud.userInteractionEnabled = NO;
     hud.mode = MBProgressHUDModeText;
     hud.detailsLabel.text = text;
     [hud hideAnimated:YES afterDelay:second];
